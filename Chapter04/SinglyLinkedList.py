@@ -14,13 +14,17 @@ class SinglyLinkedList:
         # Encapsulate the data in a Node 
         node = Node(data)
         if self.head is None:
-            self.head = node    
+            self.head = node 
+            self.size += 1
         else: 
             current = self.head 
             while current.next:
                 current = current.next 
             current.next = node 
+            self.size += 1
             
+    def size(self):
+        return self.size
             
             
 words = SinglyLinkedList()
@@ -32,3 +36,5 @@ current = words.head
 while current:
     print(current.data)
     current = current.next
+    
+print(f'The linked list has {words.size} items.')    
